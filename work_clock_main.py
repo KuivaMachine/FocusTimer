@@ -561,7 +561,7 @@ class ClockWindow(QMainWindow):
         # Создаем иконку в системном трее
         self.tray_icon = QSystemTrayIcon(self)
         self.tray_icon.setIcon(QIcon(get_resource_path("resources/icon.ico")))
-        self.tray_icon.setToolTip(f"WorkClock v{self.version} - Нажмите дважды, чтобы скрыть")
+        self.tray_icon.setToolTip(f"Focus Timer v{self.version} - Нажмите дважды, чтобы скрыть")
         # Создаем контекстное меню для трея
         tray_menu = QMenu()
         tray_menu.setStyleSheet("""
@@ -674,7 +674,7 @@ class ClockWindow(QMainWindow):
             "time_font": self.timer_label.get_time_font()
         }
         appdata = os.getenv('APPDATA')
-        app_dir = Path(appdata) / "WorkClock" / 'settings.json'
+        app_dir = Path(appdata) / "FocusTimer" / 'settings.json'
 
         with open(str(app_dir), "w", encoding='utf-8') as f:
             json.dump(settings, f, indent=4, ensure_ascii=False)

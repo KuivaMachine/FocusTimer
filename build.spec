@@ -29,7 +29,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='WorkClock',
+    name='Focus Timer',
     debug=False,
     upx=True,
     console=False,

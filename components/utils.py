@@ -6,7 +6,7 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 
-LOG_FILE_NAME="WorkClock - logs"
+LOG_FILE_NAME="FocusTimer - logs"
 
 def lighten_color_subtract(hex_color, amount=40):
     """
@@ -78,7 +78,7 @@ def get_resource_path(relative_path):
 
 def check_settings():
     # Определяем пути
-    appdata_dir = Path(os.getenv('APPDATA')) / "WorkClock"
+    appdata_dir = Path(os.getenv('APPDATA')) / "FocusTimer"
     appdata_dir.mkdir(parents=True, exist_ok=True)
 
     file_path = appdata_dir / "settings.json"
@@ -150,7 +150,7 @@ def check_settings():
 # ВОЗВРАЩАЕТ НАСТРОЙКИ ИЗ APPDATA
 def load_settings():
     appdata = os.getenv('APPDATA')
-    app_dir = Path(appdata) / "WorkClock" / 'settings.json'
+    app_dir = Path(appdata) / "FocusTimer" / 'settings.json'
     try:
         with open(app_dir, "r", encoding='utf-8') as f:
             return json.load(f)
